@@ -1,0 +1,27 @@
+
+@import '../../styles/colors';
+
+.vocal {
+    position: relative;
+    border: solid 1px $fiord;
+    width: 320px;
+    height: 180px;
+
+    &:before {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        border-top: solid 1px $fiord;
+        content: '';
+    }
+
+    &-waves {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        left: 0;
+        transform: translateY(-50%);
+        text-align: center;
+    }
+}

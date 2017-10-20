@@ -1,0 +1,12 @@
+
+.tree {
+    &-column {
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+
+        & + & {
+            margin-left: 100px;
+        }
+    }
+}

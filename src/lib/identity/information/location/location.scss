@@ -1,0 +1,40 @@
+
+@import '../../../../styles/colors';
+
+.location {
+
+    &-map,
+    &-planet {
+        margin-top: 9px;
+        border: solid 1px $fiord;
+        width: 180px;
+        height: 60px;
+        background-repeat: no-repeat;
+        background-position: center;
+        animation: appear ease forwards;
+        animation-iteration-count: 1;
+    }
+
+    &-map {
+        background-size: cover;
+
+        &-cursor {
+            width: 180px;
+            height: 60px;
+        }
+    }
+
+    &-planet {
+        background-size: contain;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

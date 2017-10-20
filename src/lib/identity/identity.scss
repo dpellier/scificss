@@ -1,1 +1,17 @@
 
+.identity {
+    position: relative;
+    margin: 20px;//TODO remove
+
+    &-picture {
+        position: absolute;
+        z-index: 6;
+    }
+
+    &-information {
+        position: absolute;
+        top: 0;
+        left: 90px;
+        z-index: 5;
+    }
+}

@@ -1,0 +1,103 @@
+
+@import '../../../styles/colors';
+
+@function pi() {
+    @return 3.14159265359;
+}
+
+$container-size: 180px;
+$container-border-size: 1px;
+$container-padding: 6px;
+
+$inner-size: $container-size - $container-padding * 2;
+$inner-circle-border-size: 4px;
+$inner-circle-radius: ($inner-size - $inner-circle-border-size) / 2;
+$inner-circle-dasharray: ceil(2 * pi() * $inner-circle-radius);
+
+.picture {
+    position: relative;
+    padding: $container-padding;
+    width: $container-size;
+    height: $container-size;
+    box-sizing: border-box;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        border: solid $container-border-size $fiord;
+        width: $container-size;
+        height: $container-size;
+        background-color: $black;
+        animation: blink 1.2s linear infinite;
+        content: '';
+        box-sizing: border-box;
+        animation-iteration-count: 3;
+    }
+
+    &-load {
+        position: absolute;
+        z-index: 2;
+        width: $inner-size;
+        height: $inner-size;
+
+        &-circle {
+            stroke: $horizon;
+            stroke-width: $inner-circle-border-size;
+            stroke-dasharray: $inner-circle-dasharray;
+            stroke-dashoffset: $inner-circle-dasharray;
+            fill: transparent;
+            transform: rotate(-90deg);
+            transform-origin: center center;
+            animation: load linear forwards;
+            animation-iteration-count: 1;
+        }
+    }
+
+    &-image {
+        position: absolute;
+        top: $container-padding;
+        left: $container-padding;
+        z-index: 1;
+        opacity: 0;
+        border-radius: 50%;
+        width: $inner-size;
+        height: $inner-size;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        animation: appear linear forwards;
+        animation-iteration-count: 1;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes load {
+    0% {
+        stroke-dashoffset: $inner-circle-dasharray;
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

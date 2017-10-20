@@ -1,0 +1,14 @@
+
+@import '../../../styles/colors';
+
+.title {
+    display: inline-block;
+    border-right: solid 1px $fiord;
+    border-bottom: solid 1px $fiord;
+    padding: 0 2px;
+
+    &-label {
+        vertical-align: middle;
+        font-size: 11px;
+    }
+}

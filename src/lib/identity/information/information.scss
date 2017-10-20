@@ -1,0 +1,49 @@
+
+@import '../../../styles/colors';
+
+.information {
+    width: 0;
+    animation: grow ease-in forwards;
+    animation-iteration-count: 1;
+    overflow: hidden;
+
+    &-container {
+        position: relative;
+        border: solid 1px $fiord;
+        padding: 5px 5px 5px 95px;;
+        width: 100%;
+        height: 180px;
+        box-sizing: border-box;
+        animation-iteration-count: 1;
+
+        &:before {
+            position: absolute;
+            right: -1px;
+            bottom: -1px;
+            content: '';
+            border-style: solid;
+            border-width: 0 0 51px 81px;
+            border-color: transparent transparent $fiord transparent;
+        }
+
+        &:after {
+            position: absolute;
+            right: -1px;
+            bottom: -1px;
+            content: '';
+            border-style: solid;
+            border-width: 0 0 50px 80px;
+            border-color: transparent transparent $black transparent;
+        }
+    }
+}
+
+@keyframes grow {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 400px;
+    }
+}

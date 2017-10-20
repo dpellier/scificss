@@ -1,0 +1,51 @@
+
+@import '../../../../styles/buttons';
+@import '../../../../styles/colors';
+
+.tile {
+    width: 100px;
+
+    &--expanded &-content {
+        height: 90px;
+    }
+
+    &-summary {
+        @extend %scifi-button;
+        text-transform: uppercase;
+    }
+
+    &-content {
+        position: relative;
+        margin: 5px 5px 0;
+        height: 0;
+        background-color: $aztec;
+        line-height: 90px;
+        text-align: center;
+        transition: height 1s ease;
+        overflow: hidden;
+
+        &:before {
+            position: absolute;
+            top: -8px;
+            left: 0;
+            border-bottom: solid transparent 8px;
+            border-left: solid $black 8px;
+            height: 8px;
+            content: '';
+        }
+
+        &:after {
+            position: absolute;
+            bottom: -15px;
+            right: 0;
+            border-top: solid transparent 15px;
+            border-right: solid $black 15px;
+            height: 15px;
+            content: '';
+        }
+
+        &-text {
+            color: $white;
+        }
+    }
+}

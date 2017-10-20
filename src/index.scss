@@ -1,0 +1,16 @@
+
+@import './styles/colors';
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: $black;
+    color: $fiord;
+
+    > * {
+        height: 100%;
+    }
+}
